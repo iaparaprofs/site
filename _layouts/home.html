@@ -7,8 +7,10 @@ layout: default
 <div id="posts">
   {% for post in site.posts limit:10 %}
     <article class="post">
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <small>{{ post.date | date: "%d/%m/%Y" }}</small>
+      <header class="post-header">
+        <p class="post-date">{{ post.date | date: "%d/%m/%Y" }}</p>
+        <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      </header>
       <p>{{ post.excerpt }}</p>
     </article>
   {% endfor %}
@@ -39,8 +41,10 @@ layout: default
     next.forEach(p => {
       postsContainer.innerHTML += `
         <article class="post">
-          <h2><a href="${p.url}">${p.title}</a></h2>
-          <small>${p.date}</small>
+          <header class="post-header">
+            <p class="post-date">${p.date}</p>
+            <h2 class="post-title"><a href="${p.url}">${p.title}</a></h2>
+          </header>
           <p>${p.excerpt}</p>
         </article>`;
     });

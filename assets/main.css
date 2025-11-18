@@ -120,7 +120,27 @@ a:active {
 .post {
   margin-bottom: 2.2rem;
   padding: 1rem 0 1.5rem;
-  border-bottom: 1px solid var(--border);
+}
+
+.post-header {
+  margin-bottom: 0.6rem;
+}
+
+.post-date {
+  color: #6b4bff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.post-title,
+.post-title a {
+  color: #4f46e5 !important;
+}
+
+.post-title a:hover,
+.post-title a:focus {
+  color: #4338ca !important;
 }
 
 /* animação posts */
@@ -152,6 +172,9 @@ footer {
   background: #0c1015;
   color: #f7f7f7;
   box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 footer .social-icons {
