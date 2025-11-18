@@ -11,11 +11,19 @@ body {
   font-family: "Inter", Arial, sans-serif;
   max-width: 850px;
   margin: auto;
-  padding: 90px 20px 140px;
+  padding: 90px 20px 60px;
   line-height: 1.7;
   color: var(--text);
   background: var(--bg);
   transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
 }
 
 /* ===== THEME COLORS ===== */
@@ -139,16 +147,10 @@ button:hover { background: #0059c0; }
 
 /* ===== FOOTER ===== */
 footer {
-  border-top: 1px solid var(--border);
   text-align: center;
   padding: 1.75rem 1.25rem;
   background: #0c1015;
   color: #f7f7f7;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
   box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -172,7 +174,6 @@ pre,
 code {
   font-family: "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-
 pre {
   background: #0f172a;
   color: #e2e8f0;
@@ -187,6 +188,43 @@ pre code {
   color: inherit;
   padding: 0;
 }
+
+.highlight {
+  background: #0f172a;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  overflow: hidden;
+}
+
+.highlight pre {
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.highlight .c { color: #94a3b8; font-style: italic; }
+.highlight .k { color: #a78bfa; }
+.highlight .kd { color: #a78bfa; }
+.highlight .kn { color: #a78bfa; }
+.highlight .kp { color: #a78bfa; }
+.highlight .kr { color: #a78bfa; }
+.highlight .kt { color: #a78bfa; }
+.highlight .nf { color: #22d3ee; }
+.highlight .nc { color: #f472b6; }
+.highlight .nn { color: #f472b6; }
+.highlight .na { color: #f472b6; }
+.highlight .nb { color: #38bdf8; }
+.highlight .no { color: #38bdf8; }
+.highlight .nv { color: #38bdf8; }
+.highlight .s { color: #fbbf24; }
+.highlight .s1 { color: #fbbf24; }
+.highlight .s2 { color: #fbbf24; }
+.highlight .sr { color: #fbbf24; }
+.highlight .mi { color: #f472b6; }
+.highlight .mf { color: #f472b6; }
+.highlight .mh { color: #f472b6; }
+.highlight .o { color: #67e8f9; }
+.highlight .p { color: #e2e8f0; }
 
 code:not(pre code) {
   background: #f3f4f6;
