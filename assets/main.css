@@ -11,7 +11,7 @@ body {
   font-family: "Inter", Arial, sans-serif;
   max-width: 850px;
   margin: auto;
-  padding: 20px 20px 40px;
+  padding: 90px 20px 140px;
   line-height: 1.7;
   color: var(--text);
   background: var(--bg);
@@ -57,11 +57,14 @@ a:active {
 /* ===== HEADER ===== */
 .site-header {
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1030;
   background: var(--bg) !important;
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-brand,
@@ -129,14 +132,24 @@ button {
 }
 button:hover { background: #0059c0; }
 
+#load-more-btn {
+  display: block;
+  margin: 1rem auto 0;
+}
+
 /* ===== FOOTER ===== */
 footer {
   border-top: 1px solid var(--border);
   text-align: center;
-  margin-top: 3rem;
-  padding: 1.75rem 1.25rem 0;
+  padding: 1.75rem 1.25rem;
   background: #0c1015;
   color: #f7f7f7;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
 }
 
 footer .social-icons {
@@ -152,4 +165,33 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
   color: #d8e6ff;
+}
+
+/* ===== CODE BLOCKS ===== */
+pre,
+code {
+  font-family: "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+  border: 1px solid #1e293b;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+code:not(pre code) {
+  background: #f3f4f6;
+  color: #111827;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
 }
