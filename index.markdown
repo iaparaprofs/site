@@ -18,9 +18,10 @@ title: "Página Inicial"
 
 <script>
   let currentLimit = 10;
-  
+  const homeUrl = "{{ '/' | relative_url }}";
+
   function loadMorePosts() {
     currentLimit += 10;
-    window.location.href = `/?limit=${currentLimit}`;
+    window.location.href = `${homeUrl}?limit=${currentLimit}`;
   }
 </script>
