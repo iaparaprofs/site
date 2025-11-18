@@ -44,38 +44,38 @@ a:active {
   text-decoration: none !important;
 }
 
-/* ===== HEADER FULL WIDTH ===== */
+/* ===== HEADER ===== */
 .site-header {
   width: 100%;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 1030;
+  background: var(--bg) !important;
+  border-bottom: 1px solid var(--border);
 }
 
-.header-inner {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 1rem 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar-brand,
+.navbar-nav .nav-link,
+.navbar-toggler {
+  color: var(--text) !important;
 }
 
-.left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--link) !important;
 }
 
-.logo { font-weight: bold; font-size: 1.3rem; }
+.navbar-toggler {
+  border-color: var(--border);
+}
 
-/* Menu desktop */
-.nav-links a { margin-left: 20px; white-space: nowrap; }
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px var(--border);
+}
 
-/* Botão mobile oculto no desktop */
-.menu-btn { display: none; font-size: 1.6rem; cursor: pointer; }
+#theme-toggle {
+  white-space: nowrap;
+}
 
 /* ===== POSTS ===== */
 .post {
@@ -122,16 +122,4 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
   text-decoration: underline;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 700px) {
-  .menu-btn { display: block; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 1rem;
-  }
-  .nav-links.mobile-open { display: flex; }
 }

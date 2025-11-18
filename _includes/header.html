@@ -1,33 +1,29 @@
-<header class="site-header">
-  <div class="header-inner">
-    <!-- Lado esquerdo: logo + botão mobile -->
-    <div class="left">
-      <a href="{{ '/' | relative_url }}" class="logo">IA para Profs</a>
-      <span id="menu-toggle" class="menu-btn">☰</span>
-    </div>
+<nav class="navbar navbar-expand-md navbar-light bg-body-tertiary shadow-sm site-header">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-semibold" href="{{ '/' | relative_url }}">IA para Profs</a>
 
-    <!-- Lado direito: links -->
-    <nav id="menu" class="nav-links">
-      <a href="{{ '/about' | relative_url }}">Sobre</a>
-      <a href="{{ '/contact' | relative_url }}">Contato</a>
-      <a href="#" id="theme-toggle">🌗 Tema</a>
-    </nav>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ms-auto align-items-md-center gap-md-2">
+        <a class="nav-link" href="{{ '/about' | relative_url }}">Sobre</a>
+        <a class="nav-link" href="{{ '/contact' | relative_url }}">Contato</a>
+        <button id="theme-toggle" class="btn btn-outline-primary ms-md-2" type="button">🌗 Tema</button>
+      </div>
+    </div>
   </div>
-</header>
+</nav>
 
 <script>
-  // === MENU MOBILE ===
-  document.getElementById("menu-toggle").onclick = () => {
-    document.getElementById("menu").classList.toggle("mobile-open");
-  };
-
   // === DARK MODE ===
   const body = document.body;
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) body.setAttribute("data-theme", savedTheme);
 
-  document.getElementById("theme-toggle").onclick = (e) => {
-    e.preventDefault();
+  document.getElementById("theme-toggle").onclick = () => {
     const nextTheme = body.getAttribute("data-theme") === "light" ? "dark" : "light";
     body.setAttribute("data-theme", nextTheme);
     localStorage.setItem("theme", nextTheme);
