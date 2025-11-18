@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<h1>Últimas postagens</h1>
+
+<div id="posts">
+  {% for post in site.posts limit:10 %}
+    <article class="post">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <small>{{ post.date | date: "%d/%m/%Y" }}</small>
+      <p>{{ post.excerpt }}</p>
+    </article>
+  {% endfor %}
+</div>
+
+<button id="loadMore" style="margin: 2rem 0;">Carregar mais</button>
+
+<script>
+  const allPosts = [
+    {% for post in site.posts %}
+      {
+        url: "{{ post.url }}",
+        title: "{{ post.title | escape }}",
+        date: "{{ post.date | date: '%d/%m/%Y' }}",
+        excerpt: "{{ post.excerpt | strip_newlines | escape }}"
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  let loaded = 10;
+  const postsContainer = document.getElementById('posts');
+  const loadMoreBtn = document.getElementById('loadMore');
+
+  loadMoreBtn.addEventListener('click', () => {
+    const next = allPosts.slice(loaded, loaded + 10);
+
+    next.forEach(p => {
+      postsContainer.innerHTML += `
+        <article class="post">
+          <h2><a href="${p.url}">${p.title}</a></h2>
+          <small>${p.date}</small>
+          <p>${p.excerpt}</p>
+        </article>`;
+    });
+
+    loaded += 10;
+
+    if (loaded >= allPosts.length) {
+      loadMoreBtn.style.display = 'none';
+    }
+  });
+</script>

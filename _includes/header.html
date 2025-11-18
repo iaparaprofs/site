@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="header-inner">
+    <!-- Lado esquerdo: logo + botão mobile -->
+    <div class="left">
+      <a href="{{ '/' | relative_url }}" class="logo">IA para Profs</a>
+      <span id="menu-toggle" class="menu-btn">☰</span>
+    </div>
+
+    <!-- Lado direito: links -->
+    <nav id="menu" class="nav-links">
+      <a href="{{ '/about' | relative_url }}">Sobre</a>
+      <a href="{{ '/contact' | relative_url }}">Contato</a>
+      <a href="#" id="theme-toggle">🌗 Tema</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // === MENU MOBILE ===
+  document.getElementById("menu-toggle").onclick = () => {
+    document.getElementById("menu").classList.toggle("mobile-open");
+  };
+
+  // === DARK MODE ===
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) body.setAttribute("data-theme", savedTheme);
+
+  document.getElementById("theme-toggle").onclick = (e) => {
+    e.preventDefault();
+    const nextTheme = body.getAttribute("data-theme") === "light" ? "dark" : "light";
+    body.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+  };
+</script>
