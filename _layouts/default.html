@@ -35,5 +35,42 @@
     crossorigin="anonymous"
   ></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const codeBlocks = document.querySelectorAll('.post-content pre');
+
+      codeBlocks.forEach((block) => {
+        const wrapper = block.closest('.highlight') || block;
+
+        if (wrapper.dataset.copyAttached) return;
+        wrapper.dataset.copyAttached = 'true';
+        wrapper.classList.add('code-block');
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'copy-code-btn';
+        button.innerHTML = '<i class="bi bi-clipboard"></i><span>Copiar</span>';
+        button.setAttribute('aria-label', 'Copiar código');
+
+        button.addEventListener('click', async () => {
+          const code = block.innerText;
+          try {
+            await navigator.clipboard.writeText(code);
+            button.classList.add('copied');
+            button.innerHTML = '<i class="bi bi-clipboard-check"></i><span>Copiado</span>';
+            setTimeout(() => {
+              button.classList.remove('copied');
+              button.innerHTML = '<i class="bi bi-clipboard"></i><span>Copiar</span>';
+            }, 1500);
+          } catch (error) {
+            console.error('Falha ao copiar o código', error);
+          }
+        });
+
+        wrapper.appendChild(button);
+      });
+    });
+  </script>
+
 </body>
 </html>
