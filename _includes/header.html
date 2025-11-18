@@ -11,7 +11,9 @@
       <div class="navbar-nav ms-auto align-items-md-center gap-md-2">
         <a class="nav-link" href="{{ '/about' | relative_url }}">Sobre</a>
         <a class="nav-link" href="{{ '/contact' | relative_url }}">Contato</a>
-        <button id="theme-toggle" class="btn btn-outline-primary ms-md-2" type="button">🌗 Tema</button>
+        <button id="theme-toggle" class="theme-toggle ms-md-2" type="button" aria-label="Alternar tema">
+          🌗
+        </button>
       </div>
     </div>
   </div>
@@ -19,13 +21,21 @@
 
 <script>
   // === DARK MODE ===
-  const body = document.body;
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) body.setAttribute("data-theme", savedTheme);
+  const root = document.documentElement;
+  const themeToggleButton = document.getElementById("theme-toggle");
 
-  document.getElementById("theme-toggle").onclick = () => {
-    const nextTheme = body.getAttribute("data-theme") === "light" ? "dark" : "light";
-    body.setAttribute("data-theme", nextTheme);
+  const savedTheme = localStorage.getItem("theme") || "light";
+  root.setAttribute("data-theme", savedTheme);
+  updateThemeIcon(savedTheme);
+
+  themeToggleButton.onclick = () => {
+    const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", nextTheme);
     localStorage.setItem("theme", nextTheme);
+    updateThemeIcon(nextTheme);
   };
+
+  function updateThemeIcon(theme) {
+    themeToggleButton.textContent = theme === "light" ? "🌙" : "☀️";
+  }
 </script>

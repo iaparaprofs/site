@@ -1,18 +1,17 @@
 ---
-layout: page
-title: About
+layout: default
+title: Sobre
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# Sobre o IA para Profs
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+O IA para Profs nasceu para ajudar educadores a experimentarem ferramentas de inteligência artificial no dia a dia. Aqui você encontra testes rápidos, guias curtos e relatos práticos que podem ser aplicados em sala de aula sem complicação.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Nossa proposta é manter tudo simples, direto ao ponto e em português, com foco em:
 
+- Dicas rápidas para planejar aulas com IA.
+- Sugestões de ferramentas fáceis de começar a usar.
+- Experimentos e resultados compartilhados pela comunidade.
 
-[jekyll-organization]: https://github.com/jekyll
+Se quiser compartilhar uma ideia ou sugerir um teste, é só visitar a página de contato.
