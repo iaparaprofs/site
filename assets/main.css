@@ -132,6 +132,14 @@ a:active {
   letter-spacing: 0.02em;
   margin-bottom: 0.35rem;
 }
+.post-date a {
+  color: inherit !important;
+}
+
+.post-date a:hover,
+.post-date a:focus {
+  color: #5b3de0 !important;
+}
 
 .post-title,
 .post-title a {
@@ -175,6 +183,7 @@ footer {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  margin-top: auto;
 }
 
 footer .social-icons {
@@ -217,6 +226,39 @@ pre code {
   border-radius: 10px;
   border: 1px solid #1e293b;
   overflow: hidden;
+}
+
+.code-block {
+  position: relative;
+}
+
+.copy-code-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.copy-code-btn:hover,
+.copy-code-btn:focus {
+  background: #2563eb;
+  color: #f8fafc;
+  border-color: #2563eb;
+}
+
+.copy-code-btn.copied {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #f8fafc;
 }
 
 .highlight pre {

@@ -4,11 +4,12 @@ layout: default
 
 <h1>Últimas postagens</h1>
 
+{% assign posts_with_titles = site.posts | where_exp: "post", "post.title" %}
 <div id="posts">
-  {% for post in site.posts limit:10 %}
+  {% for post in posts_with_titles limit:10 %}
     <article class="post">
       <header class="post-header">
-        <p class="post-date">{{ post.date | date: "%d/%m/%Y" }}</p>
+        <p class="post-date"><a href="{{ post.url | relative_url }}">{{ post.date | date: "%d/%m/%Y" }}</a></p>
         <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
       </header>
       <p>{{ post.excerpt }}</p>
@@ -20,7 +21,7 @@ layout: default
 
 <script>
   const allPosts = [
-    {% for post in site.posts %}
+    {% for post in posts_with_titles %}
       {
         url: "{{ post.url | relative_url }}",
         title: "{{ post.title | escape }}",
@@ -35,6 +36,10 @@ layout: default
   const postsContainer = document.getElementById('posts');
   const loadMoreBtn = document.getElementById('loadMore');
 
+  if (loaded >= allPosts.length) {
+    loadMoreBtn.style.display = 'none';
+  }
+
   loadMoreBtn.addEventListener('click', () => {
     const next = allPosts.slice(loaded, loaded + 10);
 
@@ -42,7 +47,7 @@ layout: default
       postsContainer.innerHTML += `
         <article class="post">
           <header class="post-header">
-            <p class="post-date">${p.date}</p>
+            <p class="post-date"><a href="${p.url}">${p.date}</a></p>
             <h2 class="post-title"><a href="${p.url}">${p.title}</a></h2>
           </header>
           <p>${p.excerpt}</p>
