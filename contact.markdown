@@ -1,13 +1,14 @@
 ---
 layout: default
 title: Contato
+permalink: /contact/
 ---
 
 # Contato
 
-Entre em contato pelo email: **seuemail@dominio.com**
+Quer compartilhar uma experiência, sugerir um teste ou mandar feedback?
 
-Ou pelas redes sociais:
+- Envie um e-mail para **contato@iaparapraxis.com**
+- Ou me chame nas redes: LinkedIn e Instagram (links no rodapé)
 
-- Twitter: @seuperfil  
-- Instagram: @seuperfil
+Prometo responder rapidinho!
