@@ -6,7 +6,11 @@
 }
 
 /* ===== BASE ===== */
-html { font-size: 16px; }
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
 body {
   font-family: "Inter", Arial, sans-serif;
   max-width: 850px;
@@ -22,7 +26,7 @@ body {
 }
 
 main {
-  flex: 1;
+  flex: 1 0 auto;
   width: 100%;
 }
 
@@ -149,6 +153,28 @@ a:active {
 }
 
 /* ===== POSTS ===== */
+.posts-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.posts-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.posts-page__header h1 {
+  margin: 0;
+}
+
+.posts-page .search-form {
+  width: 100%;
+  max-width: 420px;
+}
+
 .posts-list {
   padding: 1.25rem;
   background: var(--bg);
@@ -234,6 +260,7 @@ footer {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   margin-top: auto;
+  flex-shrink: 0;
 }
 
 footer .social-icons {
@@ -243,7 +270,9 @@ footer .social-icons {
 footer .social-icons a {
   margin: 0 10px;
   text-decoration: none;
-  color: #f7f7f7;
+  color: #ffffff !important;
+  background-image: none !important;
+  -webkit-text-fill-color: #ffffff !important;
   font-size: 1.3rem;
 }
 
