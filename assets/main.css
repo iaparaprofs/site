@@ -15,7 +15,7 @@ body {
   font-family: "Inter", Arial, sans-serif;
   max-width: 850px;
   margin: auto;
-  padding: 90px 20px 60px;
+  padding: 90px 20px 0;
   line-height: 1.7;
   color: var(--text);
   background: var(--bg);
@@ -28,6 +28,7 @@ body {
 main {
   flex: 1 0 auto;
   width: 100%;
+  padding-bottom: 120px;
 }
 
 /* ===== THEME COLORS ===== */
@@ -74,9 +75,9 @@ a:active {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: transparent !important;
-  background-image: var(--brand-gradient);
-  -webkit-text-fill-color: transparent !important;
+  color: var(--text) !important;
+  background-image: none;
+  -webkit-text-fill-color: var(--text) !important;
 }
 
 /* ===== HEADER ===== */
@@ -107,7 +108,19 @@ a:active {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: var(--link) !important;
+  color: var(--text) !important;
+}
+
+.site-header a,
+.site-header a:visited {
+  transition: none;
+}
+
+.site-header a:hover,
+.site-header a:focus {
+  background-position: 0 0;
+  color: inherit;
+  -webkit-text-fill-color: inherit;
 }
 
 .navbar-toggler {
@@ -261,6 +274,10 @@ footer {
   margin-right: calc(50% - 50vw);
   margin-top: auto;
   flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 footer .social-icons {
