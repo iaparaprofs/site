@@ -1,23 +1,16 @@
 ---
-layout: default
-title: "Teste - Código"
-date: 2025-04-10 10:00:00 +0000
-categories: demonstracao
+layout: post
+title: "Post de teste 4"
+date: 2025-04-10 12:00:00 -0300
+categories: teste
 ---
 
-Nem toda postagem precisa ser apenas texto corrido. Às vezes, um exemplo de código ajuda a mostrar rapidamente uma ideia, e a formatação com destaque deixa tudo legível.
+Quarto post de teste, apresentando um trecho de HTML com marcação básica de lista.
 
-```python
-from datetime import datetime
-
-
-def formata_data_br(data):
-    """Recebe um datetime e devolve a data no padrão brasileiro."""
-    return data.strftime("%d/%m/%Y")
-
-
-hoje = datetime.now()
-print(f"Hoje é {formata_data_br(hoje)}")
+```html
+<ul>
+  <li>Primeiro item</li>
+  <li>Segundo item</li>
+  <li>Terceiro item</li>
+</ul>
 ```
-
-Para casos menores, você também pode usar `code inline` para nomear funções ou variáveis sem quebrar a leitura.

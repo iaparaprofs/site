@@ -1,14 +1,18 @@
 ---
 layout: post
-title: "Rubricas rápidas com apoio de IA"
-date: 2025-02-12 14:30:00 +0000
-categories: avaliacao
+title: "Post de teste 2"
+date: 2025-02-12 10:00:00 -0300
+categories: teste
 ---
 
-Precisa de uma rubrica em minutos? Experimente gerar uma estrutura inicial com IA e depois ajuste o vocabulário para refletir a realidade da turma.
+Segundo post de teste, agora mostrando um exemplo de função JavaScript para calcular médias.
 
-- Descreva a tarefa e peça 3 níveis de desempenho.
-- Solicite exemplos de feedback curto para cada nível.
-- Revise os critérios para incluir o que mais valoriza (participação, colaboração, originalidade).
+```javascript
+function media(valores) {
+  if (!Array.isArray(valores) || valores.length === 0) return 0;
+  const total = valores.reduce((soma, valor) => soma + valor, 0);
+  return total / valores.length;
+}
 
-Em poucos passos você tem um rascunho que economiza tempo e mantém transparência sobre o que será avaliado.
+console.log(media([7, 8.5, 9]));
+```

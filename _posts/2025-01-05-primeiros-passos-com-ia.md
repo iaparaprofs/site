@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "Primeiros passos com IA em sala de aula"
-date: 2025-01-05 09:00:00 +0000
-categories: guia
+title: "Post de teste 1"
+date: 2025-01-05 09:00:00 -0300
+categories: teste
 ---
 
-Começar a experimentar IA com estudantes pode ser simples. Foque em uma atividade curta, como pedir a uma ferramenta de texto para sugerir ganchos de abertura para a próxima aula.
+Este é o primeiro post de teste. Ele traz um trecho simples de código para conferir a renderização de blocos.
 
-1. Escolha um tema e peça três ideias de abertura.
-2. Peça ajustes no tom (mais lúdico, mais formal, etc.).
-3. Mostre aos alunos como comparar as sugestões e selecionar a melhor.
+```python
+def saudacao(nome: str) -> str:
+    return f"Olá, {nome}!"
 
-A atividade dura poucos minutos e já demonstra como a IA pode apoiar a criatividade sem substituir o pensamento crítico.
+print(saudacao("visitante"))
+```
