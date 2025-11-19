@@ -5,7 +5,7 @@ title: Todos os posts
 
 <section class="posts-page">
   <div class="posts-page__header">
-    <h1>Todos os posts</h1>
+    <h1 class="brand-gradient-text">Todos os posts</h1>
     <form class="search-form" role="search" onsubmit="event.preventDefault();">
       <input
         id="post-search"
