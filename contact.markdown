@@ -4,7 +4,7 @@ title: Contato
 permalink: /contact/
 ---
 
-# Contato
+# Contato {: .brand-gradient-text }
 
 Quer compartilhar uma experiência, sugerir um teste ou mandar feedback?
 

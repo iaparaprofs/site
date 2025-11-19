@@ -4,7 +4,7 @@ title: Sobre
 permalink: /about/
 ---
 
-# Sobre o IA para Profs
+# Sobre o IA para Profs {: .brand-gradient-text }
 
 O IA para Profs nasceu para ajudar educadores a experimentarem ferramentas de inteligência artificial no dia a dia. Aqui você encontra testes rápidos, guias curtos e relatos práticos que podem ser aplicados em sala de aula sem complicação.
 

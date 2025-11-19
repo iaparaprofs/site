@@ -5,12 +5,8 @@ date: 2025-04-10 12:00:00 -0300
 categories: teste
 ---
 
-Quarto post de teste, apresentando um trecho de HTML com marcação básica de lista.
+Quarto post de teste, agora mostrando apenas uma lista escrita em Markdown:
 
-```html
-<ul>
-  <li>Primeiro item</li>
-  <li>Segundo item</li>
-  <li>Terceiro item</li>
-</ul>
-```
+- Primeiro item
+- Segundo item
+- Terceiro item
